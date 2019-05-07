@@ -31,7 +31,7 @@ int status = WL_IDLE_STATUS;
 
 WiFiServer server(23);
 
-boolean alreadyConnected = false; // whether or not the client was connected previously
+bool alreadyConnected = false; // whether or not the client was connected previously
 
 void setup() {
   //Initialize serial and wait for port to open:
