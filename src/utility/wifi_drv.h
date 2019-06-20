@@ -223,7 +223,7 @@ public:
 	 *
      * return: ssid string of the specified item on the networks scanned list
      */
-    static char* getSSIDNetoworks(uint8_t networkItem);
+    static char* getSSIDNetworks(uint8_t networkItem);
 
     /*
      * Return the RSSI of the networks discovered during the scanNetworks
@@ -232,7 +232,7 @@ public:
 	 *
      * return: signed value of RSSI of the specified item on the networks scanned list
      */
-    static int32_t getRSSINetoworks(uint8_t networkItem);
+    static int32_t getRSSINetworks(uint8_t networkItem);
 
     /*
      * Return the encryption type of the networks discovered during the scanNetworks
@@ -241,7 +241,7 @@ public:
 	 *
      * return: encryption type (enum wl_enc_type) of the specified item on the networks scanned list
      */
-    static uint8_t getEncTypeNetowrks(uint8_t networkItem);
+    static uint8_t getEncTypeNetworks(uint8_t networkItem);
 
     /*
      * Resolve the given hostname to an IP address.
