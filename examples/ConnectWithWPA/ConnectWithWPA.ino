@@ -1,7 +1,7 @@
 /*
 
- This example connects to an unencrypted Wifi network.
- Then it prints the  MAC address of the Wifi shield,
+ This example connects to an unencrypted WiFi network.
+ Then it prints the MAC address of the WiFi shield,
  the IP address obtained, and other network details.
 
  Circuit:
@@ -17,7 +17,7 @@
 
 char ssid[] = "yourNetwork";     //  your network SSID (name)
 char pass[] = "secretPassword";  // your network password
-int status = WL_IDLE_STATUS;     // the Wifi radio's status
+int status = WL_IDLE_STATUS;     // the WiFi radio's status
 
 void setup() {
   //Initialize serial and wait for port to open:
@@ -38,7 +38,7 @@ void setup() {
     Serial.println("Please upgrade the firmware");
   }
 
-  // attempt to connect to Wifi network:
+  // attempt to connect to WiFi network:
   while (status != WL_CONNECTED) {
     Serial.print("Attempting to connect to WPA SSID: ");
     Serial.println(ssid);
@@ -119,4 +119,3 @@ void printCurrentNet() {
   Serial.println(encryption, HEX);
   Serial.println();
 }
-

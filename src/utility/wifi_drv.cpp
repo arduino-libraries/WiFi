@@ -1,5 +1,5 @@
 /*
-  wifi_drv.cpp - Library for Arduino Wifi shield.
+  wifi_drv.cpp - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino.  All right reserved.
 
   This library is free software; you can redistribute it and/or
