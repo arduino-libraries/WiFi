@@ -448,7 +448,7 @@ char* WiFiDrv::getSSIDNetoworks(uint8_t networkItem)
 uint8_t WiFiDrv::getEncTypeNetowrks(uint8_t networkItem)
 {
 	if (networkItem >= WL_NETWORKS_LIST_MAXNUM)
-		return NULL;
+		return 0;
 
 	WAIT_FOR_SLAVE_SELECT();
 
@@ -473,7 +473,8 @@ uint8_t WiFiDrv::getEncTypeNetowrks(uint8_t networkItem)
 int32_t WiFiDrv::getRSSINetoworks(uint8_t networkItem)
 {
 	if (networkItem >= WL_NETWORKS_LIST_MAXNUM)
-		return NULL;
+		return 0;
+	
 	int32_t	networkRssi = 0;
 
 	WAIT_FOR_SLAVE_SELECT();
