@@ -60,9 +60,9 @@ cat <<EOF
 =========================================
 Instructions:
 
-To access to the USB devices correctly, the dfu-programmer needs to have the root permissions.
+To access the USB devices correctly, the dfu-programmer needs to have the root permissions.
 
-You can upgrade the firmware of the antenna togheter with the shield firmware or only the shield firmware
+You can upgrade the firmware of the antenna together with the shield firmware or only the shield firmware
 if there aren't changes on the antenna firmware.
 
 Use the '-h' parameter for help
@@ -98,7 +98,7 @@ if [ $USER = 'root' ] ; then  #check if the current user is root
 	      fi
 	     fi
 	  else
-	    echo "Arduino Path not setted. Retry...\n"
+	    echo "Arduino Path not set. Retry...\n"
 	  fi
 	  ;;
 	h)

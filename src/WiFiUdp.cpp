@@ -1,5 +1,5 @@
 /*
-  WiFiUdp.cpp - Library for Arduino Wifi shield.
+  WiFiUdp.cpp - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino LLC.  All right reserved.
 
   This library is free software; you can redistribute it and/or
@@ -136,7 +136,7 @@ int WiFiUDP::read(unsigned char* buffer, size_t len)
 	  uint16_t size = 0;
 	  if (!ServerDrv::getDataBuf(_sock, buffer, &size))
 		  return -1;
-	  // TODO check if the buffer is too smal respect to buffer size
+	  // TODO check if the buffer is too small in respect to buffer size
 	  return size;
   }else{
 	  return -1;
@@ -177,4 +177,3 @@ uint16_t  WiFiUDP::remotePort()
 	uint16_t port = (_remotePort[0]<<8)+_remotePort[1];
 	return port;
 }
-

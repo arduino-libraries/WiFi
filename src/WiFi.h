@@ -1,5 +1,5 @@
 /*
-  WiFi.h - Library for Arduino Wifi shield.
+  WiFi.h - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino LLC.  All right reserved.
 
   This library is free software; you can redistribute it and/or
@@ -53,13 +53,13 @@ public:
     static char* firmwareVersion();
 
 
-    /* Start Wifi connection for OPEN networks
+    /* Start WiFi connection for OPEN networks
      *
      * param ssid: Pointer to the SSID string.
      */
     int begin(char* ssid);
 
-    /* Start Wifi connection with WEP encryption.
+    /* Start WiFi connection with WEP encryption.
      * Configure a key into the device. The key type (WEP-40, WEP-104)
      * is determined by the size of the key (5 bytes for WEP-40, 13 bytes for WEP-104).
      *
@@ -69,7 +69,7 @@ public:
      */
     int begin(char* ssid, uint8_t key_idx, const char* key);
 
-    /* Start Wifi connection with passphrase
+    /* Start WiFi connection with passphrase
      * the most secure supported mode will be automatically selected
      *
      * param ssid: Pointer to the SSID string.
@@ -78,46 +78,46 @@ public:
      */
     int begin(char* ssid, const char *passphrase);
 
-    /* Change Ip configuration settings disabling the dhcp client
+    /* Change IP configuration settings disabling the DHCP client
         *
-        * param local_ip: 	Static ip configuration
+        * param local_ip: 	Static IP configuration
         */
     void config(IPAddress local_ip);
 
-    /* Change Ip configuration settings disabling the dhcp client
+    /* Change IP configuration settings disabling the DHCP client
         *
-        * param local_ip: 	Static ip configuration
+        * param local_ip: 	Static IP configuration
 	* param dns_server:     IP configuration for DNS server 1
         */
     void config(IPAddress local_ip, IPAddress dns_server);
 
-    /* Change Ip configuration settings disabling the dhcp client
+    /* Change IP configuration settings disabling the DHCP client
         *
-        * param local_ip: 	Static ip configuration
+        * param local_ip: 	Static IP configuration
 	* param dns_server:     IP configuration for DNS server 1
         * param gateway : 	Static gateway configuration
         */
     void config(IPAddress local_ip, IPAddress dns_server, IPAddress gateway);
 
-    /* Change Ip configuration settings disabling the dhcp client
+    /* Change IP configuration settings disabling the DHCP client
         *
-        * param local_ip: 	Static ip configuration
+        * param local_ip: 	Static IP configuration
 	* param dns_server:     IP configuration for DNS server 1
         * param gateway: 	Static gateway configuration
         * param subnet:		Static Subnet mask
         */
     void config(IPAddress local_ip, IPAddress dns_server, IPAddress gateway, IPAddress subnet);
 
-    /* Change DNS Ip configuration
+    /* Change DNS IP configuration
      *
-     * param dns_server1: ip configuration for DNS server 1
+     * param dns_server1: IP configuration for DNS server 1
      */
     void setDNS(IPAddress dns_server1);
 
-    /* Change DNS Ip configuration
+    /* Change DNS IP configuration
      *
-     * param dns_server1: ip configuration for DNS server 1
-     * param dns_server2: ip configuration for DNS server 2
+     * param dns_server1: IP configuration for DNS server 1
+     * param dns_server2: IP configuration for DNS server 2
      *
      */
     void setDNS(IPAddress dns_server1, IPAddress dns_server2);
@@ -139,7 +139,7 @@ public:
     /*
      * Get the interface IP address.
      *
-     * return: Ip address value
+     * return: IP address value
      */
     IPAddress localIP();
 
@@ -151,9 +151,9 @@ public:
     IPAddress subnetMask();
 
     /*
-     * Get the gateway ip address.
+     * Get the gateway IP address.
      *
-     * return: gateway ip address value
+     * return: gateway IP address value
      */
    IPAddress gatewayIP();
 
@@ -199,7 +199,7 @@ public:
      *
      * param networkItem: specify from which network item want to get the information
 	 *
-     * return: ssid string of the specified item on the networks scanned list
+     * return: SSID string of the specified item on the networks scanned list
      */
     char*	SSID(uint8_t networkItem);
 

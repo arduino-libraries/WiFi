@@ -1,12 +1,12 @@
 /*
- Chat  Server
+ Chat Server
 
  A simple server that distributes any incoming messages to all
- connected clients.  To use telnet to  your device's IP address and type.
- You can see the client's input in the serial monitor as well.
+ connected clients. To use, telnet to your device's IP address and type.
+ You can see the client's input in the Serial Monitor as well.
 
  This example is written for a network using WPA encryption. For
- WEP or WPA, change the Wifi.begin() call accordingly.
+ WEP or WPA, change the WiFi.begin() call accordingly.
 
 
  Circuit:
@@ -52,7 +52,7 @@ void setup() {
     Serial.println("Please upgrade the firmware");
   }
 
-  // attempt to connect to Wifi network:
+  // attempt to connect to WiFi network:
   while (status != WL_CONNECTED) {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
@@ -78,7 +78,7 @@ void loop() {
   // when the client sends the first byte, say hello:
   if (client) {
     if (!alreadyConnected) {
-      // clead out the input buffer:
+      // clear out the input buffer:
       client.flush();
       Serial.println("We have a new client");
       client.println("Hello, client!");
@@ -113,5 +113,3 @@ void printWifiStatus() {
   Serial.print(rssi);
   Serial.println(" dBm");
 }
-
-

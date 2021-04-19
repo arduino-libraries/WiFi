@@ -1,5 +1,5 @@
 /*
-  spi_drv.cpp - Library for Arduino Wifi shield.
+  spi_drv.cpp - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino.  All right reserved.
 
   This library is free software; you can redistribute it and/or
@@ -28,10 +28,10 @@ extern "C" {
 
 #define DATAOUT     11 // MOSI
 #define DATAIN      12 // MISO
-#define SPICLOCK    13 // sck
-#define SLAVESELECT 10 // ss
+#define SPICLOCK    13 // SCK
+#define SLAVESELECT 10 // SS
 #define SLAVEREADY  7  // handshake pin
-#define WIFILED     9  // led on wifi shield
+#define WIFILED     9  // LED on WiFi shield
 
 #define DELAY_SPI(X) { int ii=0; do { asm volatile("nop"); } while (++ii < (X*F_CPU/16000000)); }
 #define DELAY_TRANSFER() DELAY_SPI(10)
@@ -382,29 +382,29 @@ int SpiDrv::waitResponse(uint8_t cmd, uint8_t* numParamRead, uint8_t** params, u
 void SpiDrv::sendParam(uint8_t* param, uint8_t param_len, uint8_t lastParam)
 {
     int i = 0;
-    // Send Spi paramLen
+    // Send SPI paramLen
     sendParamLen8(param_len);
 
-    // Send Spi param data
+    // Send SPI param data
     for (i=0; i<param_len; ++i)
     {
         spiTransfer(param[i]);
     }
 
-    // if lastParam==1 Send Spi END CMD
+    // if lastParam==1 Send SPI END CMD
     if (lastParam == 1)
         spiTransfer(END_CMD);
 }
 
 void SpiDrv::sendParamLen8(uint8_t param_len)
 {
-    // Send Spi paramLen
+    // Send SPI paramLen
     spiTransfer(param_len);
 }
 
 void SpiDrv::sendParamLen16(uint16_t param_len)
 {
-    // Send Spi paramLen
+    // Send SPI paramLen
     spiTransfer((uint8_t)((param_len & 0xff00)>>8));
     spiTransfer((uint8_t)(param_len & 0xff));
 }
@@ -434,16 +434,16 @@ void SpiDrv::sendBuffer(uint8_t* param, uint16_t param_len, uint8_t lastParam)
 {
     uint16_t i = 0;
 
-    // Send Spi paramLen
+    // Send SPI paramLen
     sendParamLen16(param_len);
 
-    // Send Spi param data
+    // Send SPI param data
     for (i=0; i<param_len; ++i)
     {
         spiTransfer(param[i]);
     }
 
-    // if lastParam==1 Send Spi END CMD
+    // if lastParam==1 Send SPI END CMD
     if (lastParam == 1)
         spiTransfer(END_CMD);
 }
@@ -451,13 +451,13 @@ void SpiDrv::sendBuffer(uint8_t* param, uint16_t param_len, uint8_t lastParam)
 
 void SpiDrv::sendParam(uint16_t param, uint8_t lastParam)
 {
-    // Send Spi paramLen
+    // Send SPI paramLen
     sendParamLen8(2);
 
     spiTransfer((uint8_t)((param & 0xff00)>>8));
     spiTransfer((uint8_t)(param & 0xff));
 
-    // if lastParam==1 Send Spi END CMD
+    // if lastParam==1 Send SPI END CMD
     if (lastParam == 1)
         spiTransfer(END_CMD);
 }
@@ -471,20 +471,20 @@ void SpiDrv::sendParam(uint16_t param, uint8_t lastParam)
 
 void SpiDrv::sendCmd(uint8_t cmd, uint8_t numParam)
 {
-    // Send Spi START CMD
+    // Send SPI START CMD
     spiTransfer(START_CMD);
 
     //waitForSlaveSign();
     //wait the interrupt trigger on slave
     delayMicroseconds(SPI_START_CMD_DELAY);
 
-    // Send Spi C + cmd
+    // Send SPI C + cmd
     spiTransfer(cmd & ~(REPLY_FLAG));
 
-    // Send Spi totLen
+    // Send SPI totLen
     //spiTransfer(totLen);
 
-    // Send Spi numParam
+    // Send SPI numParam
     spiTransfer(numParam);
 
     // If numParam == 0 send END CMD

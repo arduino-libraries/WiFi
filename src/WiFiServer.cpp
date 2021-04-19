@@ -1,5 +1,5 @@
 /*
-  WiFiServer.cpp - Library for Arduino Wifi shield.
+  WiFiServer.cpp - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino LLC.  All right reserved.
 
   This library is free software; you can redistribute it and/or

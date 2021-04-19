@@ -1,5 +1,5 @@
 /*
-  WiFiUdp.h - Library for Arduino Wifi shield.
+  WiFiUdp.h - Library for Arduino WiFi shield.
   Copyright (c) 2011-2014 Arduino LLC.  All right reserved.
 
   This library is free software; you can redistribute it and/or
@@ -36,7 +36,7 @@ public:
 
   // Sending UDP packets
   
-  // Start building up a packet to send to the remote host specific in ip and port
+  // Start building up a packet to send to the remote host specified in ip and port
   // Returns 1 if successful, 0 if there was a problem with the supplied IP address or port
   virtual int beginPacket(IPAddress ip, uint16_t port);
   // Start building up a packet to send to the remote host specific in host and port
