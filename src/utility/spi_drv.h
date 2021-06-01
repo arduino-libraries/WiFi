@@ -38,6 +38,7 @@
 	SpiDrv::waitForSlaveReady();  \
 	SpiDrv::spiSlaveSelect();
 
+#pragma GCC diagnostic ignored "-Wunused-variable"
 static bool initialized = false;
 
 class SpiDrv
