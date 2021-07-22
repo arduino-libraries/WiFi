@@ -38,6 +38,10 @@
 	SpiDrv::waitForSlaveReady();  \
 	SpiDrv::spiSlaveSelect();
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
+static bool initialized = false;
+#pragma GCC diagnostic pop
 static bool initialized = false;
 
 class SpiDrv
