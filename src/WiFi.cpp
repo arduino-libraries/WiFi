@@ -222,17 +222,17 @@ int8_t WiFiClass::scanNetworks()
 
 char* WiFiClass::SSID(uint8_t networkItem)
 {
-	return WiFiDrv::getSSIDNetoworks(networkItem);
+	return WiFiDrv::getSSIDNetworks(networkItem);
 }
 
 int32_t WiFiClass::RSSI(uint8_t networkItem)
 {
-	return WiFiDrv::getRSSINetoworks(networkItem);
+	return WiFiDrv::getRSSINetworks(networkItem);
 }
 
 uint8_t WiFiClass::encryptionType(uint8_t networkItem)
 {
-    return WiFiDrv::getEncTypeNetowrks(networkItem);
+    return WiFiDrv::getEncTypeNetworks(networkItem);
 }
 
 uint8_t WiFiClass::status()
