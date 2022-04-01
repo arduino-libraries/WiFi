@@ -598,13 +598,13 @@ void loop () {}
 
 ## IPAddress class
 
-### `WiFi.localIP()`
+### `IPAddress.localIP()`
 #### Description 
 Gets the WiFi shield's IP address
 
 #### Syntax
 ```
-WiFi.localIP();
+IPAddress.localIP();
 ```
 #### Parameters
 none
@@ -646,13 +646,13 @@ void setup()
 void loop () {}
 ```
 
-### `WiFi.subnetMask()`
+### `IPAddress.subnetMask()`
 #### Description 
 Gets the WiFi shield's subnet mask
 
 #### Syntax
 ```
-WiFi.subnet();
+IPAddress.subnet();
 ```
 #### Parameters
 none
@@ -698,13 +698,13 @@ void loop () {
  
 ```
 
-### `WiFi.gatewayIP()`
+### `IPAddress.gatewayIP()`
 #### Description 
 Gets the WiFi shield's gateway IP address.
 
 #### Syntax
 ```
-WiFi.gatewayIP();
+IPAddress.gatewayIP();
 ```
 #### Parameters
 none
