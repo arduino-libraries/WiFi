@@ -1,18 +1,20 @@
 # WiFi library
 
 ## Wifi Class
+
 ### `WiFi.begin()`
-### Description 
+
+#### Description 
 Initializes the WiFi library's network settings and provides the current status.
 
-### Syntax
+#### Syntax
 ```
 WiFi.begin();
 WiFi.begin(ssid);
 WiFi.begin(ssid, pass);
 WiFi.begin(ssid, keyIndex, key);
 ```
-### Parameters
+#### Parameters
 ssid: the SSID (Service Set Identifier) is the name of the WiFi network you want to connect to.
 
 keyIndex: WEP encrypted networks can hold up to 4 different keys. This identifies which key you are going to use.
@@ -21,10 +23,10 @@ key: a hexadecimal string used as a security code for WEP encrypted networks.
 
 pass: WPA encrypted networks use a password in the form of a string for security.
 
-### Returns 
+#### Returns 
 WL_CONNECTED when connected to a network
 WL_IDLE_STATUS when not connected to a network, but powered on
-### Example
+#### Example
 ``` 
 #include <WiFi.h>
 
@@ -42,21 +44,21 @@ void loop () {}
 ```
 
 ### `WiFi.disconnect()`
-### Description 
+#### Description 
 Disconnects the WiFi shield from the current network.
 
-### Syntax
+#### Syntax
 ```
 WiFi.disconnect();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 nothing
 
 ### `WiFi.config()`
-### Description 
+#### Description 
 WiFi.config() allows you to configure a static IP address as well as change the DNS, gateway, and subnet addresses on the WiFi shield.
 
 Unlike WiFi.begin() which automatically configures the WiFi shield to use DHCP, WiFi.config() allows you to manually set the network address of the shield.
@@ -65,14 +67,14 @@ Calling WiFi.config() before WiFi.begin() forces begin() to configure the WiFi s
 
 You can call WiFi.config() after WiFi.begin(), but the shield will initialize with begin() in the default DHCP mode. Once the config() method is called, it will change the network address as requested.
 
-### Syntax
+#### Syntax
 ```
 WiFi.config(ip);
 WiFi.config(ip, dns);
 WiFi.config(ip, dns, gateway);
 WiFi.config(ip, dns, gateway, subnet);
 ```
-### Parameters
+#### Parameters
 ip: the IP address of the device (array of 4 bytes)
 
 dns: the address for a DNS server.
@@ -81,10 +83,10 @@ gateway: the IP address of the network gateway (array of 4 bytes). optional: def
 
 subnet: the subnet mask of the network (array of 4 bytes). optional: defaults to 255.255.255.0
 
-### Returns 
+#### Returns 
 Nothing
 
-### Example
+#### Example
 ``` 
 This example shows how to set the static IP address, 192.168.0.177, of the LAN network to the WiFi shield:
 
@@ -135,23 +137,23 @@ void loop () {}
 ```
 
 ### `WiFi.setDNS()`
-### Description 
+#### Description 
 WiFi.setDNS() allows you to configure the DNS (Domain Name System) server.
 
-### Syntax
+#### Syntax
 ```
 WiFi.setDNS(dns_server1)
 WiFi.setDNS(dns_server1, dns_server2)
 ```
-### Parameters
+#### Parameters
 dns_server1: the IP address of the primary DNS server
 
 dns_server2: the IP address of the secondary DNS server
 
-### Returns 
+#### Returns 
 Nothing
 
-### Example
+#### Example
 ``` 
 This example shows how to set the Google DNS (8.8.8.8). You can set it as an object IPAddress.
 
@@ -202,23 +204,23 @@ void loop () {
 ```
 
 ### `WiFi.SSID()`
-### Description 
+#### Description 
 Gets the SSID of the current network
 
-### Syntax
+#### Syntax
 ```
 WiFi.SSID();
 WiFi.SSID(wifiAccessPoint)
 ```
-### Parameters
+#### Parameters
 wifiAccessPoint: specifies from which network to get the information
 
-### Returns 
+#### Returns 
 A string containing the SSID the WiFi shield is currently connected to.
 
 string containing name of network requested.
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -266,20 +268,20 @@ void scanNetworks() {
 ```
 
 ### `WiFi.BSSID()`
-### Description 
+#### Description 
 Gets the MAC address of the routher you are connected to
 
-### Syntax
+#### Syntax
 ```
 WiFi.BSSID(bssid);
 ```
-### Parameters
+#### Parameters
 bssid : 6 byte array
 
-### Returns 
+#### Returns 
 A byte array containing the MAC address of the router the WiFi shield is currently connected to.
 
-### Example
+#### Example
 ``` 
 #include <WiFi.h>
 
@@ -320,21 +322,21 @@ void loop () {}
 ```
 
 ### `WiFi.RSSI()`
-### Description 
+#### Description 
 Gets the signal strength of the connection to the router
 
-### Syntax
+#### Syntax
 ```
 WiFi.RSSI();
 WiFi.RSSI(wifiAccessPoint);
 ```
-### Parameters
+#### Parameters
 wifiAccessPoint: specifies from which network to get the information
 
-### Returns 
+#### Returns 
 long : the current RSSI /Received Signal Strength in dBm
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -365,17 +367,17 @@ void loop () {}
 ```
 
 ### `WiFi.encryptionType()`
-### Description 
+#### Description 
 Gets the encryption type of the current network
 
-### Syntax
+#### Syntax
 ```
 WiFi.encryptionType();
 WiFi.encryptionType(wifiAccessPoint);
 ```
-### Parameters
+#### Parameters
 wifiAccessPoint: specifies which network to get information from
-### Returns 
+#### Returns 
 byte : value represents the type of encryption
 
 TKIP (WPA) = 2
@@ -383,7 +385,7 @@ WEP = 5
 CCMP (WPA) = 4
 NONE = 7
 AUTO = 8
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -414,20 +416,20 @@ void loop () {}
 ```
 
 ### `WiFi.scanNetworks()`
-### Description 
+#### Description 
 Scans for available WiFi networks and returns the discovered number
 
-### Syntax
+#### Syntax
 ```
 WiFi.scanNetworks();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 byte : number of discovered networks
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -457,17 +459,17 @@ void loop() {}
 ```
 
 ### `WiFi.status()`
-### Description 
+#### Description 
 Return the connection status.
 
-### Syntax
+#### Syntax
 ```
 WiFi.status();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 WL_CONNECTED: assigned when connected to a WiFi network;
 WL_NO_SHIELD: assigned when no WiFi shield is present;
 WL_IDLE_STATUS: it is a temporary status assigned when WiFi.begin() is called and remains active until the number of attempts expires (resulting in WL_CONNECT_FAILED) or a connection is established (resulting in WL_CONNECTED);
@@ -476,7 +478,7 @@ WL_SCAN_COMPLETED: assigned when the scan networks is completed;
 WL_CONNECT_FAILED: assigned when the connection fails for all the attempts;
 WL_CONNECTION_LOST: assigned when the connection is lost;
 WL_DISCONNECTED: assigned when disconnected from a network;
-### Example
+#### Example
 ``` 
 
 #include <SPI.h>
@@ -525,34 +527,34 @@ void loop() {
 ```
 
 ### `WiFi.getSocket()`
-### Description 
+#### Description 
 gets the first socket available
 
-### Syntax
+#### Syntax
 ```
 WiFi.getSocket();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 int : the first socket available
 
 ### `WiFi.macAddress()`
-### Description 
+#### Description 
 Gets the MAC Address of your WiFi shield
 
-### Syntax
+#### Syntax
 ```
 WiFi.macAddress(mac);
 ```
-### Parameters
+#### Parameters
 mac: a 6 byte array to hold the MAC address
 
-### Returns 
+#### Returns 
 byte array : 6 bytes representing the MAC address of your shield
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -596,21 +598,21 @@ void loop () {}
 
 ## IPAddress class
 
-### `WiFi.localIP()`
-### Description 
+### `IPAddress.localIP()`
+#### Description 
 Gets the WiFi shield's IP address
 
-### Syntax
+#### Syntax
 ```
-WiFi.localIP();
+IPAddress.localIP();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 the IP address of the shield
 
-### Example
+#### Example
 ``` 
 
 #include <WiFi.h>
@@ -644,21 +646,21 @@ void setup()
 void loop () {}
 ```
 
-### `WiFi.subnetMask()`
-### Description 
+### `IPAddress.subnetMask()`
+#### Description 
 Gets the WiFi shield's subnet mask
 
-### Syntax
+#### Syntax
 ```
-WiFi.subnet();
+IPAddress.subnet();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 the subnet mask of the shield
 
-### Example
+#### Example
 ``` 
 #include <WiFi.h>
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
@@ -696,21 +698,21 @@ void loop () {
  
 ```
 
-### `WiFi.gatewayIP()`
-### Description 
+### `IPAddress.gatewayIP()`
+#### Description 
 Gets the WiFi shield's gateway IP address.
 
-### Syntax
+#### Syntax
 ```
-WiFi.gatewayIP();
+IPAddress.gatewayIP();
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 An array containing the shield's gateway IP address
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -751,24 +753,24 @@ void loop () {}
 ## Server class
 
 ### `Server`
-### Description 
+#### Description 
 Server is the base class for all WiFi server based calls. It is not called directly, but invoked whenever you use a function that relies on it.
 
 ### `WiFiServer()`
-### Description 
+#### Description 
 Creates a server that listens for incoming connections on the specified port.
 
-### Syntax
+#### Syntax
 ```
 Server(port);
 ```
-### Parameters
+#### Parameters
 port: the port to listen on (int)
 
-### Returns 
+#### Returns 
 None
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -807,21 +809,21 @@ void loop() {
  
 ```
 
-### `begin()`
-### Description 
+### `server.begin()`
+#### Description 
 Tells the server to begin listening for incoming connections.
 
-### Syntax
+#### Syntax
 ```
 server.begin()
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 None
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -860,23 +862,23 @@ void loop() {
  
 ```
 
-### `available()`
-### Description 
+### `server.available()`
+#### Description 
 Gets a client that is connected to the server and has data available for reading. The connection persists when the returned client object goes out of scope; you can close it by calling client.stop().
 
 available() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 server.available()
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 a Client object; if no Client has data available for reading, this object will evaluate to false in an if-statement
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -924,21 +926,21 @@ void loop() {
  
 ```
 
-### `write()`
-### Description 
+### `server.write()`
+#### Description 
 Write data to all the clients connected to a server.
 
-### Syntax
+#### Syntax
 ```
 server.write(data)
 ```
-### Parameters
+#### Parameters
 data: the value to write (byte or char)
 
-### Returns 
+#### Returns 
 byte : the number of bytes written. It is not necessary to read this.
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -977,62 +979,62 @@ void loop() {
 }
 ```
 
-### `print()`
-### Description 
+### `server.print()`
+#### Description 
 Print data to all the clients connected to a server. Prints numbers as a sequence of digits, each an ASCII character (e.g. the number 123 is sent as the three characters '1', '2', '3').
 
-### Syntax
+#### Syntax
 ```
 server.print(data)
 server.print(data, BASE)
 ```
-### Parameters
+#### Parameters
 data: the data to print (char, byte, int, long, or string)
 
 BASE (optional): the base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
 
-### Returns 
+#### Returns 
 byte print() will return the number of bytes written, though reading that number is optional
 
-### `println()`
-### Description 
+### `server.println()`
+#### Description 
 Prints data, followed by a newline, to all the clients connected to a server. Prints numbers as a sequence of digits, each an ASCII character (e.g. the number 123 is sent as the three characters '1', '2', '3').
 
-### Syntax
+#### Syntax
 ```
 server.println()
 server.println(data)
 server.println(data, BASE)
 ```
-### Parameters
+#### Parameters
 data (optional): the data to print (char, byte, int, long, or string)
 
 BASE (optional): the base in which to print numbers: DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
 
-### Returns 
+#### Returns 
 byte
 println() will return the number of bytes written, though reading that number is optional
 
 ## Client class
 
 ### `Client()`
-### Description 
+#### Description 
 Client is the base class for all WiFi client based calls. It is not called directly, but invoked whenever you use a function that relies on it.
 
 Functions
 
 ### `WiFiClient()`
-### Description 
+#### Description 
 Creates a client that can connect to to a specified internet IP address and port as defined in client.connect().
 
-### Syntax
+#### Syntax
 ```
 WiFiClient()
 ```
-### Parameters
+#### Parameters
 none
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -1076,21 +1078,21 @@ void loop() {
 }
 ```
 
-### `connected()`
-### Description 
+### `client.connected()`
+#### Description 
 Whether or not the client is connected. Note that a client is considered connected if the connection has been closed but there is still unread data.
 
-### Syntax
+#### Syntax
 ```
 client.connected()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 Returns true if the client is connected, false if not.
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -1145,26 +1147,26 @@ void loop() {
 }
 ```
 
-### `connect()`
-### Description 
+### `client.connect()`
+#### Description 
 Connect to the IP address and port specified in the constructor. The return value indicates success or failure. connect() also supports DNS lookups when using a domain name (ex:google.com).
 
-### Syntax
+#### Syntax
 ```
 client.connect(ip, port)
 client.connect(URL, port)
 ```
-### Parameters
+#### Parameters
 ip: the IP address that the client will connect to (array of 4 bytes)
 
 URL: the domain name the client will connect to (string, ex.:"arduino.cc")
 
 port: the port that the client will connect to (int)
 
-### Returns 
+#### Returns 
 Returns true if the connection succeeds, false if not.
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -1207,72 +1209,72 @@ void loop() {
 }
 ```
 
-### `write()`
-### Description 
+### `client.write()`
+#### Description 
 Write data to the server the client is connected to.
 
-### Syntax
+#### Syntax
 ```
 client.write(data)
 ```
-### Parameters
+#### Parameters
 data: the byte or char to write
 
-### Returns 
+#### Returns 
 byte: the number of characters written. it is not necessary to read this value.
 
-### `print()`
-### Description 
+### `client.print()`
+#### Description 
 Print data to the server that a client is connected to. Prints numbers as a sequence of digits, each an ASCII character (e.g. the number 123 is sent as the three characters '1', '2', '3').
 
-### Syntax
+#### Syntax
 ```
 client.print(data)
 client.print(data, BASE)
 ```
-### Parameters
+#### Parameters
 data: the data to print (char, byte, int, long, or string)
 
 BASE (optional): the base in which to print numbers:, DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
 
-### Returns 
+#### Returns 
 byte : returns the number of bytes written, though reading that number is optional
 
-### `println()`
-### Description 
+### `client.println()`
+#### Description 
 Print data, followed by a carriage return and newline, to the server a client is connected to. Prints numbers as a sequence of digits, each an ASCII character (e.g. the number 123 is sent as the three characters '1', '2', '3').
 
-### Syntax
+#### Syntax
 ```
 client.println()
 client.println(data)
 client.print(data, BASE)
 ```
-### Parameters
+#### Parameters
 data (optional): the data to print (char, byte, int, long, or string)
 
 BASE (optional): the base in which to print numbers: DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
 
-### Returns 
+#### Returns 
 byte: return the number of bytes written, though reading that number is optional
 
-### `available()`
-### Description 
+### `client.available()`
+#### Description 
 Returns the number of bytes available for reading (that is, the amount of data that has been written to the client by the server it is connected to).
 
 available() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 client.available()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 The number of bytes available.
 
-### Example
+#### Example
 ``` 
 #include <SPI.h>
 #include <WiFi.h>
@@ -1331,264 +1333,264 @@ void loop() {
 }
 ```
 
-### `read()`
+### `client.read()`
 Read the next byte received from the server the client is connected to (after the last call to read()).
 
 read() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 client.read()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 The next byte (or character), or -1 if none is available.
 
-### `flush()`
+### `client.flush()`
 Discard any bytes that have been written to the client but not yet read.
 
 flush() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 client.flush()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 none
 
-### `stop()`
+### `client.stop()`
 Disconnect from the server
 
-### Syntax
+#### Syntax
 ```
 client.stop()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 none
 
 ## UDP class
 
 ### `WiFiUDP`
-### Description 
+#### Description 
 Creates a named instance of the WiFi UDP class that can send and receive UDP messages. On AVR based boards, outgoing UDP packets are limited to 72 bytes in size currently. For non-AVR boards the limit is 1446 bytes.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP
 ```
-### Parameters
+#### Parameters
 none
 
-### `begin()`
+### `WiFiUDP.begin()`
 
-### Description 
+#### Description 
 Initializes the WiFi UDP library and network settings. Starts WiFiUDP socket, listening at local port PORT */
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.begin(port);
 ```
-### Parameters
+#### Parameters
 port: the local port to listen on (int)
 
-### Returns 
+#### Returns 
 1: if successful
 0: if there are no sockets available to use
 
-### `available()`
-### Description 
+### `WiFiUDP.available()`
+#### Description 
 Get the number of bytes (characters) available for reading from the buffer. This is data that's already arrived.
 
 This function can only be successfully called after WiFiUDP.parsePacket().
 
 available() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.available()
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 the number of bytes available in the current packet
 0: if parsePacket hasn't been called yet
 
-### `beginPacket()`
+### `WiFiUDP.beginPacket()`
 
-### Description 
+#### Description 
 Starts a connection to write UDP data to the remote connection
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.beginPacket(hostName, port);
 WiFiUDP.beginPacket(hostIp, port);
 ```
-### Parameters
+#### Parameters
 hostName: the address of the remote host. It accepts a character string or an IPAddress
 
 hostIp: the IP address of the remote connection (4 bytes)
 
 port: the port of the remote connection (int)
-### Returns 
+#### Returns 
 1: if successful
 0: if there was a problem with the supplied IP address or port
 
-### `endPacket()`
+### `WiFiUDP.endPacket()`
 
-### Description 
+#### Description 
 Called after writing UDP data to the remote connection. It finishes off the packet and send it.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.endPacket();
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 1: if the packet was sent successfully
 0: if there was an error
 
-### `write()`
+### `WiFiUDP.write()`
 
-### Description 
+#### Description 
 Writes UDP data to the remote connection. Must be wrapped between beginPacket() and endPacket(). beginPacket() initializes the packet of data, it is not sent until endPacket() is called.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.write(byte);
 WiFiUDP.write(buffer, size);
 ```
-### Parameters
+#### Parameters
 byte: the outgoing byte
 buffer: the outgoing message
 size: the size of the buffer
-### Returns 
+#### Returns 
 single byte into the packet
 bytes size from buffer into the packet
 
-### `parsePacket()`
+### `WiFiUDP.parsePacket()`
 
-### Description 
+#### Description 
 It starts processing the next available incoming packet, checks for the presence of a UDP packet, and reports the size. parsePacket() must be called before reading the buffer with UDP.read().
 
-### Syntax
+#### Syntax
 ```
 UDP.parsePacket();
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 the size of the packet in bytes
 0: if no packets are available
 
-### `peek()`
+### `WiFiUDP.peek()`
 Read a byte from the file without advancing to the next one. That is, successive calls to peek() will return the same value, as will the next call to read().
 
 This function inherited from the Stream class. See the Stream class main page for more information.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.peek()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 b: the next byte or character
 -1: if none is available
 
-### `read()`
+### `WiFiUDP.read()`
 
-### Description 
+#### Description 
 Reads UDP data from the specified buffer. If no arguments are given, it will return the next character in the buffer.
 
 This function can only be successfully called after WiFiUDP.parsePacket().
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.read();
 WiFiUDP.read(buffer, len);
 ```
-### Parameters
+#### Parameters
 buffer: buffer to hold incoming packets (char*)
 
 len: maximum size of the buffer (int)
 
-### Returns 
+#### Returns 
 b: the characters in the buffer (char)
 size: the size of the buffer
 -1: if no buffer is available
 
-### `flush()`
+### `WiFiUDP.flush()`
 Discard any bytes that have been written to the client but not yet read.
 
 flush() inherits from the Stream utility class.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.flush()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 none
 
-### `stop()`
-### Description 
+### `WiFiUDP.stop()`
+#### Description 
 Disconnect from the server. Release any resource being used during the UDP session.
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.stop()
 ```
-### Parameters
+#### Parameters
 none
 
-### Returns 
+#### Returns 
 none
 
-### `remoteIP()`
+### `WiFiUDP.remoteIP()`
 
-### Description 
+#### Description 
 Gets the IP address of the remote connection.
 
 This function must be called after WiFiUDP.parsePacket().
 
-### Syntax
+#### Syntax
 ```
 WiFiUDP.remoteIP();
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 4 bytes : the IP address of the host who sent the current incoming packet
 
-### `remotePort()`
+### `WiFiUDP.remotePort()`
 
-### Description 
+#### Description 
 Gets the port of the remote UDP connection.
 
 This function must be called after UDP.parsePacket().
 
-### Syntax
+#### Syntax
 ```
 UDP.remotePort();
 ```
-### Parameters
+#### Parameters
 None
 
-### Returns 
+#### Returns 
 The port of the host who sent the current incoming packet
