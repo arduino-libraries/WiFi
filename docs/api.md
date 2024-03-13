@@ -9,7 +9,6 @@ Initializes the WiFi library's network settings and provides the current status.
 
 #### Syntax
 ```
-WiFi.begin();
 WiFi.begin(ssid);
 WiFi.begin(ssid, pass);
 WiFi.begin(ssid, keyIndex, key);
