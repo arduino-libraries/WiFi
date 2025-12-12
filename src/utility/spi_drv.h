@@ -38,8 +38,6 @@
 	SpiDrv::waitForSlaveReady();  \
 	SpiDrv::spiSlaveSelect();
 
-static bool initialized = false;
-
 class SpiDrv
 {
 private:
